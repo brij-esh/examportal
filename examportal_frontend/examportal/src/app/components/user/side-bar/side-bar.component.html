@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <button mat-list-item routerLink="/user-dashboard">
+            Home<mat-icon mat-list-icon>home</mat-icon>
+        </button>
+        <button mat-list-item [routerLink]="['profile']">
+            Profile<mat-icon mat-list-icon>account_circle</mat-icon>
+        </button>
+        <button mat-list-item (click)="isCategoryShown()">
+            Categories<mat-icon mat-list-icon>category</mat-icon> <mat-icon>unfold_more</mat-icon>
+        </button>
+
+        <div *ngIf="showCategory" class="sub-menu-background">
+            <button mat-list-item *ngFor="let element of categories; let i = index" class="sub-menu-font" (click)="openCategory(element.id, element.title)"><mat-icon
+                    mat-list-icon>scatter_plot</mat-icon>{{element.title}}</button>
+        </div>
+
+        <button mat-list-item (click)="isQuizShown()">
+            Quizes<mat-icon mat-list-icon>quiz</mat-icon><mat-icon>unfold_more</mat-icon>
+        </button>
+
+        <div *ngIf="showQuiz" class="sub-menu-background">
+            <button mat-list-item *ngFor="let element of quizzes; let i = index" class="sub-menu-font" [routerLink]="['/user-dashboard/quiz-startup/'+element.id]"><mat-icon
+                    mat-list-icon>scatter_plot</mat-icon>{{element.title}}</button>
+        </div>
+
+        <button mat-list-item (click)="logout()">
+            Logout<mat-icon mat-list-icon>logout</mat-icon>
+        </button>
+    </mat-action-list>
+</mat-card>

@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #F3E5F5;}
+
+.text-center{
+    text-align: center !important;
+}
+
+.logo{
+    background: #ffffff url(./assets/images/logo.png) no-repeat right top;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: auto;
+}
+.user_image{
+    background: #ffffff url(./assets/images/deffault_user.jpg) no-repeat right top;
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: auto;
+}
+.exam_image{
+    background: #ffffff url(./assets/images/exam.png) no-repeat right top;
+    background-size: cover;
+}
+.full-width{
+    width: 100%;
+}
+.half-width{
+    width: 50%;
+}
+.bold_font{
+    font-weight: bold;
+}
+
+.sub-menu-font{
+    font-size: .9rem !important;
+}
+.mt10{
+    margin-top: 10px !important;
+}
+.mr10{
+    margin-right: 10px  !important;
+}
+.mb10{
+    margin-bottom: 10px  !important;
+}
+.ml10{
+    margin-left: 10px  !important;
+}
+.pt10{
+    padding-top: 10px !important;
+}
+.pr10{
+    padding-right: 10px  !important;
+}
+.pb10{
+    padding-bottom: 10px  !important;
+}
+.pl10{
+    padding-left: 10px  !important;
+}
+
+
+.mt20{
+    margin-top: 20px  !important;
+}
+.mr20{
+    margin-right: 20px  !important;
+}
+.mb20{
+    margin-bottom: 20px  !important;
+}
+.ml20{
+    margin-left: 20px  !important;
+}
+
+.pt20{
+    padding-top: 20px !important;
+}
+.pr20{
+    padding-right: 20px  !important;
+}
+.pb20{
+    padding-bottom: 20px  !important;
+}
+.pl20{
+    padding-left: 20px  !important;
+}
+
+.mt30{
+    margin-top: 30px  !important;
+}
+.mr30{
+    margin-right: 30px  !important;
+}
+.mb30{
+    margin-bottom: 30px  !important;
+}
+.ml30{
+    margin-left: 30px  !important;
+}
+
+.mt50{
+    margin-top: 50px  !important;
+}
+.mr50{
+    margin-right: 50px  !important;
+}
+.mb50{
+    margin-bottom: 50px  !important;
+}
+.ml50{
+    margin-left: 50px  !important;
+}

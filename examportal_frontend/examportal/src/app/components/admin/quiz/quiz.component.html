@@ -1,0 +1,38 @@
+<h1>Quizzes</h1>
+<mat-card *ngFor="let element of quizzes" class="mt20">
+    <mat-card-header>
+        <div mat-card-avatar>
+            <mat-icon>quiz</mat-icon>
+        </div>
+        <mat-card-title>{{ element.title }}</mat-card-title>
+        <mat-card-subtitle>{{ element.category.title }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        {{ element.description }}
+    </mat-card-content>
+    <button mat-raised-button color="primary" class="mr20" [routerLink]="['/admin-dashboard/view-quiz-question/'+element.id+'/'+element.title]">Questions</button>
+    <button mat-stroked-button color="primary" class="mr20">
+        Max Marks: {{ element.maxMarks }}
+    </button>
+    <button mat-stroked-button color="primary" class="mr20">
+        Number of questions: {{ element.numberOfQuestion }}
+    </button>
+    <button *ngIf="!element.active" mat-stroked-button color="primary" class="mr20" (click)="activateQuiz(element.id)">
+        Activate
+    </button>
+    <button *ngIf="element.active" mat-stroked-button color="warn" class="mr20" (click)="deactivateQuiz(element.id)">
+        Deactivate
+    </button>
+    <button mat-stroked-button color="primary" class="mr20">Attempts</button>
+    <button  mat-raised-button color="accent" class="mr20" [routerLink]="['/admin-dashboard/update-quiz/'+element.id]">
+        Update
+    </button>
+    <button mat-fab color="warn" class="mr20" (click)="deleteQuiz(element.id)">
+        <mat-icon>delete</mat-icon>
+    </button>
+</mat-card>
+<div class="container text-center mt20">
+    <button mat-raised-button color="accent" [routerLink]="['/admin-dashboard/add-quiz']">
+        Add New Quiz
+    </button>
+</div>

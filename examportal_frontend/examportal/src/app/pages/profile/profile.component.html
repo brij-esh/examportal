@@ -1,0 +1,78 @@
+<mat-card id="profile">
+    <h2>Your Profile Details</h2>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container mb20">
+                <div class="user_image"></div>
+            </div>
+
+            <h2 class="text-center">Welocome, {{user.firstName}}</h2>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!-- Table -->
+                        <table aria-describedby>
+                            <mat-card class="th">
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </mat-card>
+                            <mat-card class="mat-card-row mb10">
+                                <tr>
+                                    <td>Username: </td>
+                                    <td>{{user.username}}</td>
+                                </tr>
+                            </mat-card>
+                            <mat-card class="mat-card-row mb10">
+                                <tr>
+                                    <td>Role: </td>
+                                    <td>{{user.authorities[0].authority}}</td>
+                                </tr>
+                            </mat-card>
+                            <mat-card class="mat-card-row mb10">
+                                <tr>
+                                    <td>Status: </td>
+                                    <td>{{user.enabled ? "ACTIVE":"NOT ACTIVE"}}</td>
+                                </tr>
+                            </mat-card>
+                            <mat-card class="mat-card-row mb10">
+                                <tr>
+                                    <td>First Name: </td>
+                                    <td>{{user.firstName}}</td>
+                                </tr>
+                            </mat-card>
+                            <mat-card class="mat-card-row mb10">
+                                <tr>
+                                    <td>Last Name: </td>
+                                    <td>{{user.lastName}}</td>
+                                </tr>
+                            </mat-card>
+                            <mat-card class="mat-card-row mb10">
+                                <tr>
+                                    <td>Email: </td>
+                                    <td>{{user.email}}</td>
+                                </tr>
+                            </mat-card>
+                            <mat-card class="mat-card-row mb10">
+                                <tr>
+                                    <td>Phone: </td>
+                                    <td>{{user.phone}}</td>
+                                </tr>
+                            </mat-card>
+                        </table>
+                        <div class="text-center mt10 mb30">
+                            <button mat-raised-button color="accent" class="mr30" [routerLink]="['/admin-dashboard/update']">Update</button>
+                            <button mat-raised-button color="primary">Share</button>
+                        </div>
+                          
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
