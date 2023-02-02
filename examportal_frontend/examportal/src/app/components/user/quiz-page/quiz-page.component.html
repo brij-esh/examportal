@@ -3,6 +3,11 @@
         <div class="row">
             <div class="col-md-2">
                 <h3>Instructions</h3>
+                <ul>
+                    <li>Do not switch the tab.</li>
+                    <li>Do not refresh the page.</li>
+                    <li>Do not go back.</li>
+                </ul>
             </div>
             <div class="col-md-8">
                 <ng-container *ngIf="questionList">
@@ -66,7 +71,7 @@
                         <h1>Attempted: {{attempted}}</h1>
                     </mat-card-content>
                     <mat-card-actions class="text-center">
-                        <button mat-raised-button color="primary">Print</button>
+                        <button mat-raised-button color="primary" (click)="printPage()">Print</button>
                         <button mat-raised-button color="accent"[routerLink]="['/user-dashboard']">Home</button>
                     </mat-card-actions>
                 </mat-card>

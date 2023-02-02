@@ -66,6 +66,9 @@ public class QuestionController {
         Quiz quiz = this.quizService.getQuiz(quizId);
         List<Question> questionList =  quiz.getQuestions().stream().collect(Collectors.toList());
         Collections.shuffle(questionList);
+        questionList.forEach(question->{
+            question.setAnswer("");
+        });
         Set<Question> questions =  questionList.stream().limit(quiz.getNumberOfQuestion()).collect(Collectors.toSet());
         return ResponseEntity.ok(questions);
     }
@@ -97,7 +100,7 @@ public class QuestionController {
                 correctAnswer++;
                 marksGot+=markPerQuestion;
             }
-            if(question.getGivenAnswer().trim().equals("")){
+            if(q.getGivenAnswer().length()!=0 ){
                 attempted++;
             }
 

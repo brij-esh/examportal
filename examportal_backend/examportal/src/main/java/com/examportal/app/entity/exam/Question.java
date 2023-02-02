@@ -10,6 +10,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,10 +35,13 @@ public class Question {
     private String option2;
     private String option3;
     private String option4;
+
     private String answer;
+
     @Transient
     private String givenAnswer;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Quiz quiz;
+
 }

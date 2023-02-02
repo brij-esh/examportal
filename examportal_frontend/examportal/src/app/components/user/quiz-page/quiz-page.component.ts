@@ -92,7 +92,6 @@ export class QuizPageComponent implements OnInit {
   }
 
   public submitQuiz(){
-    let markPerQuestion = this.questionList[0].quiz.maxMarks/this.questionList[0].quiz.numberOfQuestion;
     Swal.fire({
       title:'Do you want to submit the quiz?',
       showCancelButton:true,
@@ -101,52 +100,30 @@ export class QuizPageComponent implements OnInit {
     }).then((e)=>{
       if(e.isConfirmed){
         this.submit = true;
-        this.questionList.forEach((question)=>{
-          if(question.givenAnswer.trim()!=''){
-            this.attempted++;
-          }
-          if(question.givenAnswer==question.answer){
-            this.correctAnswer++;
-            this.marksGot+=markPerQuestion;
-          }
-        })
         this.submitQuizOnServer();
-        console.log("Correct answer: "+this.correctAnswer);
-        console.log("Marks got: "+this.marksGot);
-        console.log("Attempted: "+this.attempted);
-        
-        
-        
       }
     })
   }
   public autoSubmitQuiz(){
-    let markPerQuestion = this.questionList[0].quiz.maxMarks/this.questionList[0].quiz.numberOfQuestion;
         this.submit = true;
-        this.questionList.forEach((question)=>{
-          if(question.givenAnswer.trim()!=''){
-            this.attempted++;
-          }
-          if(question.givenAnswer==question.answer){
-            this.correctAnswer++;
-            this.marksGot+=markPerQuestion;
-          }
-        })
         this.submitQuizOnServer();
-        console.log("Correct answer: "+this.correctAnswer);
-        console.log("Marks got: "+this.marksGot);
-        console.log("Attempted: "+this.attempted);
   }
   public submitQuizOnServer(){
     this.quizService.evalQuiz(this.questionList).subscribe(
       (data)=>{
-        console.log(data);
+        this.attempted = data.attempted;
+        this.correctAnswer = data.correctAnswer;
+        this.marksGot = data.marksGot;
       },
       (error)=>{
         console.log(error);
         
       }
     )
+  }
+
+  public printPage(){
+    window.print();
   }
 
   preventBackButton(){
